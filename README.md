@@ -1,54 +1,112 @@
-# app-project
+# NotNote 📋
 
-This template should help get you started developing with Vue 3 in Vite.
+**NotNote** is a web and Android app that lets you register your projects and track the tasks needed to accomplish them — keeping everything organized in one place.
 
-## Recommended IDE Setup
+🌐 **Live Demo:** [https://unrivaled-otter-bd0fbd.netlify.app/](https://unrivaled-otter-bd0fbd.netlify.app/)
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## Screenshots
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+<!-- Add screenshots here -->
 
-## Type Support for `.vue` Imports in TS
+| Dashboard                                                          | Project View                                                          | Workflow                                                          |
+| ------------------------------------------------------------------ | --------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| ![Daskboard](<public/Captura de pantalla_2026-02-18_09-47-00.png>) | ![Project View](<public/Captura de pantalla_2026-02-18_09-47-47.png>) | ![Workflow](<public/Captura de pantalla_2026-02-18_09-48-25.png>) |
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## Tech Stack
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- [Vue 3](https://vuejs.org/)
+- [Capacitor](https://capacitorjs.com/) — Android builds
+- [Netlify](https://netlify.com/) — Web hosting
 
-## Project Setup
+---
 
-```sh
+## Getting Started
+
+### Prerequisites
+
+- Node.js >= 18
+- npm >= 9
+- Android Studio (for Android builds)
+
+### Install dependencies
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Run in development
 
-```sh
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Build for web
 
-```sh
+```bash
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+---
 
-```sh
-npm run test:unit
+## Android Build (Capacitor)
+
+### 1. Build the web app
+
+```bash
+npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### 2. Sync with Capacitor
 
-```sh
-npm run lint
+```bash
+npx cap sync android
 ```
+
+### 3. Open in Android Studio
+
+```bash
+npx cap open android
+```
+
+Then in Android Studio, click **Run** (▶) to launch on an emulator or connected device.
+
+### One-liner (build + sync)
+
+```bash
+npm run build && npx cap sync android
+```
+
+---
+
+## Project Structure
+
+```
+src/
+├── modules
+│   ├── common
+│   │   ├── components
+│   │   └── icons
+│   └── projects
+│       ├── components
+│       ├── interfaces
+│       ├── layouts
+│       ├── store
+│       └── views
+└── router
+```
+
+---
+
+## Deployment
+
+The web version is automatically deployed to Netlify on every push to `main`.
+
+---
+
+## License
+
+GPL v3
